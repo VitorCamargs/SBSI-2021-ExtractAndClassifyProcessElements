@@ -23,6 +23,7 @@ def english_check(text):
 def pre_classify(file_in, file_out, selected, tradutor):
     dataframe_in = pd.read_csv(file_in)
 
+
     # remover elementos sem texto
     dataframe_in = dataframe_in[
         dataframe_in['Element_name'].notna() + dataframe_in['Group'].notna() + dataframe_in['text'].notna()]
@@ -41,7 +42,7 @@ def pre_classify(file_in, file_out, selected, tradutor):
         dataframe_in['% g translate'] = dataframe_in["Name"].apply(english_check)
         dataframe_non_english = dataframe_in[dataframe_in['% g translate'] == 0]
         dataframe_non_english.to_csv('Non_english.csv', index=False)
-        dataframe_in = dataframe_in[dataframe_in['% g translate'] != 1]
+        dataframe_in = dataframe_in[dataframe_in['% g translate'] != 0]
 
     dataframe_out = pd.DataFrame(columns=colunas, data=dataframe_in)
     dataframe_out = dataframe_out.sample(frac=1, random_state=2022).reset_index(drop=True)

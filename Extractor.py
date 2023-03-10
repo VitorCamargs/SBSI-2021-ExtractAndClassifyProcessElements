@@ -123,7 +123,7 @@ def buscador(df_saida, tag, filename, co_id, sub=False, categ=None):
     return df_saida
 
 
-def extrator(pathways, output_location):
+def extractor(pathways, output_location):
     df_out = pd.DataFrame(columns=colunas)  # Cria o dataframe
     for pathway in pathways:  # para cada arquivo:
         with open(pathway, 'r', encoding='utf8') as file:

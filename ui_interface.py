@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1141, 680)
+        MainWindow.resize(1615, 782)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -38,7 +38,13 @@ class Ui_MainWindow(object):
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame_2)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.label = QLabel(self.frame_2)
+        self.frame_14 = QFrame(self.frame_2)
+        self.frame_14.setObjectName(u"frame_14")
+        self.frame_14.setFrameShape(QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_12 = QHBoxLayout(self.frame_14)
+        self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
+        self.label = QLabel(self.frame_14)
         self.label.setObjectName(u"label")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
@@ -49,20 +55,25 @@ class Ui_MainWindow(object):
         font.setPointSize(14)
         self.label.setFont(font)
 
-        self.verticalLayout_3.addWidget(self.label)
+        self.horizontalLayout_12.addWidget(self.label)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(10)
+
+        self.verticalLayout_3.addWidget(self.frame_14)
+
+        self.frame_13 = QFrame(self.frame_2)
+        self.frame_13.setObjectName(u"frame_13")
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_13)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(50, -1, 50, -1)
-        self.text_filesBPMN = QLineEdit(self.frame_2)
+        self.text_filesBPMN = QLineEdit(self.frame_13)
         self.text_filesBPMN.setObjectName(u"text_filesBPMN")
         self.text_filesBPMN.setMinimumSize(QSize(200, 0))
         self.text_filesBPMN.setFont(font)
 
         self.horizontalLayout_2.addWidget(self.text_filesBPMN)
 
-        self.button_browseBPMN = QPushButton(self.frame_2)
+        self.button_browseBPMN = QPushButton(self.frame_13)
         self.button_browseBPMN.setObjectName(u"button_browseBPMN")
         sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
         sizePolicy1.setHorizontalStretch(0)
@@ -87,10 +98,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.button_browseBPMN)
 
-        self.horizontalLayout_2.setStretch(0, 7)
-        self.horizontalLayout_2.setStretch(1, 3)
+        self.horizontalLayout_2.setStretch(0, 6)
+        self.horizontalLayout_2.setStretch(1, 1)
 
-        self.verticalLayout_3.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_3.addWidget(self.frame_13)
 
         self.frame_3 = QFrame(self.frame_2)
         self.frame_3.setObjectName(u"frame_3")
@@ -106,15 +117,34 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(50, 10, 50, 0)
+        self.Button_voltar_bpmn = QPushButton(self.frame_3)
+        self.Button_voltar_bpmn.setObjectName(u"Button_voltar_bpmn")
+        sizePolicy1.setHeightForWidth(self.Button_voltar_bpmn.sizePolicy().hasHeightForWidth())
+        self.Button_voltar_bpmn.setSizePolicy(sizePolicy1)
+        self.Button_voltar_bpmn.setMinimumSize(QSize(0, 40))
+        self.Button_voltar_bpmn.setStyleSheet(u"QPushButton{\n"
+"	Border: 2px solid rgb(37,39,48);\n"
+"	Border-radius: 20px;\n"
+"	background-color: rgb(103, 115, 125);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	Border: 2px solid rgb(50,50,48);\n"
+"	background-color: rgb(116, 134, 144);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	Border: 2px solid rgb(255, 255, 255);\n"
+"	background-color: rgb(80, 100, 125);\n"
+"}")
+
+        self.horizontalLayout_3.addWidget(self.Button_voltar_bpmn)
+
         self.button_extract = QPushButton(self.frame_3)
         self.button_extract.setObjectName(u"button_extract")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.button_extract.sizePolicy().hasHeightForWidth())
-        self.button_extract.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.button_extract.sizePolicy().hasHeightForWidth())
+        self.button_extract.setSizePolicy(sizePolicy1)
         self.button_extract.setMinimumSize(QSize(0, 40))
         self.button_extract.setFont(font)
         self.button_extract.setStyleSheet(u"QPushButton{\n"
@@ -133,10 +163,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.button_extract)
 
+        self.horizontalLayout_3.setStretch(0, 1)
+        self.horizontalLayout_3.setStretch(1, 5)
 
         self.verticalLayout_3.addWidget(self.frame_3)
 
-        self.verticalLayout_3.setStretch(0, 2)
+        self.verticalLayout_3.setStretch(0, 1)
         self.verticalLayout_3.setStretch(1, 7)
         self.verticalLayout_3.setStretch(2, 1)
 
@@ -153,26 +185,38 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.frame_4)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.label_2 = QLabel(self.frame_4)
+        self.frame_16 = QFrame(self.frame_4)
+        self.frame_16.setObjectName(u"frame_16")
+        self.frame_16.setFrameShape(QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_13 = QHBoxLayout(self.frame_16)
+        self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
+        self.label_2 = QLabel(self.frame_16)
         self.label_2.setObjectName(u"label_2")
         sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
         self.label_2.setSizePolicy(sizePolicy)
         self.label_2.setFont(font)
 
-        self.verticalLayout_5.addWidget(self.label_2)
+        self.horizontalLayout_13.addWidget(self.label_2)
 
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setSpacing(10)
+
+        self.verticalLayout_5.addWidget(self.frame_16)
+
+        self.frame_15 = QFrame(self.frame_4)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_15)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(50, -1, 50, -1)
-        self.text_filesCSV = QLineEdit(self.frame_4)
+        self.horizontalLayout_4.setContentsMargins(-1, -1, -1, 0)
+        self.text_filesCSV = QLineEdit(self.frame_15)
         self.text_filesCSV.setObjectName(u"text_filesCSV")
         self.text_filesCSV.setMinimumSize(QSize(200, 0))
         self.text_filesCSV.setFont(font)
 
         self.horizontalLayout_4.addWidget(self.text_filesCSV)
 
-        self.button_browseCSV = QPushButton(self.frame_4)
+        self.button_browseCSV = QPushButton(self.frame_15)
         self.button_browseCSV.setObjectName(u"button_browseCSV")
         sizePolicy1.setHeightForWidth(self.button_browseCSV.sizePolicy().hasHeightForWidth())
         self.button_browseCSV.setSizePolicy(sizePolicy1)
@@ -194,10 +238,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.button_browseCSV)
 
-        self.horizontalLayout_4.setStretch(0, 7)
-        self.horizontalLayout_4.setStretch(1, 3)
+        self.horizontalLayout_4.setStretch(0, 6)
+        self.horizontalLayout_4.setStretch(1, 1)
 
-        self.verticalLayout_5.addLayout(self.horizontalLayout_4)
+        self.verticalLayout_5.addWidget(self.frame_15)
 
         self.frame_6 = QFrame(self.frame_4)
         self.frame_6.setObjectName(u"frame_6")
@@ -205,13 +249,14 @@ class Ui_MainWindow(object):
         self.frame_6.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.frame_6)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(-1, 0, -1, -1)
         self.checkBox_filter = QCheckBox(self.frame_6)
         self.checkBox_filter.setObjectName(u"checkBox_filter")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Minimum)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.checkBox_filter.sizePolicy().hasHeightForWidth())
-        self.checkBox_filter.setSizePolicy(sizePolicy4)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Minimum)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.checkBox_filter.sizePolicy().hasHeightForWidth())
+        self.checkBox_filter.setSizePolicy(sizePolicy3)
         font2 = QFont()
         font2.setPointSize(12)
         self.checkBox_filter.setFont(font2)
@@ -232,10 +277,31 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5 = QHBoxLayout(self.frame_5)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(50, 10, 50, 0)
+        self.Button_voltar_csv = QPushButton(self.frame_5)
+        self.Button_voltar_csv.setObjectName(u"Button_voltar_csv")
+        sizePolicy1.setHeightForWidth(self.Button_voltar_csv.sizePolicy().hasHeightForWidth())
+        self.Button_voltar_csv.setSizePolicy(sizePolicy1)
+        self.Button_voltar_csv.setMinimumSize(QSize(0, 40))
+        self.Button_voltar_csv.setStyleSheet(u"QPushButton{\n"
+"	Border: 2px solid rgb(37,39,48);\n"
+"	Border-radius: 20px;\n"
+"	background-color: rgb(103, 115, 125);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	Border: 2px solid rgb(50,50,48);\n"
+"	background-color: rgb(116, 134, 144);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	Border: 2px solid rgb(255, 255, 255);\n"
+"	background-color: rgb(80, 100, 125);\n"
+"}")
+
+        self.horizontalLayout_5.addWidget(self.Button_voltar_csv)
+
         self.button_classify = QPushButton(self.frame_5)
         self.button_classify.setObjectName(u"button_classify")
-        sizePolicy3.setHeightForWidth(self.button_classify.sizePolicy().hasHeightForWidth())
-        self.button_classify.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.button_classify.sizePolicy().hasHeightForWidth())
+        self.button_classify.setSizePolicy(sizePolicy1)
         self.button_classify.setMinimumSize(QSize(0, 40))
         self.button_classify.setFont(font)
         self.button_classify.setStyleSheet(u"QPushButton{\n"
@@ -254,10 +320,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.button_classify)
 
+        self.horizontalLayout_5.setStretch(0, 1)
+        self.horizontalLayout_5.setStretch(1, 5)
 
         self.verticalLayout_5.addWidget(self.frame_5)
 
-        self.verticalLayout_5.setStretch(0, 2)
+        self.verticalLayout_5.setStretch(0, 1)
         self.verticalLayout_5.setStretch(1, 5)
         self.verticalLayout_5.setStretch(2, 2)
         self.verticalLayout_5.setStretch(3, 1)
@@ -282,14 +350,11 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_8)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_7.setContentsMargins(9, 9, 9, 9)
         self.label_3 = QLabel(self.frame_8)
         self.label_3.setObjectName(u"label_3")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
-        self.label_3.setSizePolicy(sizePolicy5)
+        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy)
 
         self.horizontalLayout_7.addWidget(self.label_3)
 
@@ -302,11 +367,14 @@ class Ui_MainWindow(object):
         self.frame_12.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_11 = QHBoxLayout(self.frame_12)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_11.setContentsMargins(0, 9, 0, 9)
         self.frame_7 = QFrame(self.frame_12)
         self.frame_7.setObjectName(u"frame_7")
-        sizePolicy5.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
-        self.frame_7.setSizePolicy(sizePolicy5)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Maximum, QSizePolicy.Preferred)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.frame_7.sizePolicy().hasHeightForWidth())
+        self.frame_7.setSizePolicy(sizePolicy4)
         self.frame_7.setFrameShape(QFrame.StyledPanel)
         self.frame_7.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_8 = QHBoxLayout(self.frame_7)
@@ -448,6 +516,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.checkBox_lane)
 
+        self.checkBox = QCheckBox(self.frame_7)
+        self.checkBox.setObjectName(u"checkBox")
+        self.checkBox.setFont(font3)
+
+        self.verticalLayout_8.addWidget(self.checkBox)
+
 
         self.horizontalLayout_8.addLayout(self.verticalLayout_8)
 
@@ -522,7 +596,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_11.addWidget(self.frame_12)
 
-        self.verticalLayout_11.setStretch(0, 1)
+        self.verticalLayout_11.setStretch(0, 2)
         self.verticalLayout_11.setStretch(1, 12)
 
         self.verticalLayout_9.addWidget(self.frame_11)
@@ -537,8 +611,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.checkBox_rmvNonEnglish = QCheckBox(self.frame_10)
         self.checkBox_rmvNonEnglish.setObjectName(u"checkBox_rmvNonEnglish")
-        sizePolicy4.setHeightForWidth(self.checkBox_rmvNonEnglish.sizePolicy().hasHeightForWidth())
-        self.checkBox_rmvNonEnglish.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.checkBox_rmvNonEnglish.sizePolicy().hasHeightForWidth())
+        self.checkBox_rmvNonEnglish.setSizePolicy(sizePolicy3)
         self.checkBox_rmvNonEnglish.setFont(font2)
 
         self.horizontalLayout_9.addWidget(self.checkBox_rmvNonEnglish)
@@ -552,10 +626,32 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.frame_9)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(50, 10, 50, 0)
+        self.Button_voltar_filter = QPushButton(self.frame_9)
+        self.Button_voltar_filter.setObjectName(u"Button_voltar_filter")
+        sizePolicy1.setHeightForWidth(self.Button_voltar_filter.sizePolicy().hasHeightForWidth())
+        self.Button_voltar_filter.setSizePolicy(sizePolicy1)
+        self.Button_voltar_filter.setMinimumSize(QSize(0, 40))
+        self.Button_voltar_filter.setStyleSheet(u"QPushButton{\n"
+"	Border: 2px solid rgb(37,39,48);\n"
+"	Border-radius: 20px;\n"
+"	background-color: rgb(103, 115, 125);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	Border: 2px solid rgb(50,50,48);\n"
+"	background-color: rgb(116, 134, 144);\n"
+"}\n"
+"QPushButton:pressed{\n"
+"	Border: 2px solid rgb(255, 255, 255);\n"
+"	background-color: rgb(80, 100, 125);\n"
+"}")
+
+        self.horizontalLayout_10.addWidget(self.Button_voltar_filter)
+
         self.button_filter = QPushButton(self.frame_9)
         self.button_filter.setObjectName(u"button_filter")
-        sizePolicy3.setHeightForWidth(self.button_filter.sizePolicy().hasHeightForWidth())
-        self.button_filter.setSizePolicy(sizePolicy3)
+        sizePolicy1.setHeightForWidth(self.button_filter.sizePolicy().hasHeightForWidth())
+        self.button_filter.setSizePolicy(sizePolicy1)
         self.button_filter.setMinimumSize(QSize(0, 40))
         self.button_filter.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
@@ -573,6 +669,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.button_filter)
 
+        self.horizontalLayout_10.setStretch(0, 1)
+        self.horizontalLayout_10.setStretch(1, 5)
 
         self.verticalLayout_9.addWidget(self.frame_9)
 
@@ -587,9 +685,37 @@ class Ui_MainWindow(object):
         self.frame_29.setObjectName(u"frame_29")
         self.frame_29.setFrameShape(QFrame.StyledPanel)
         self.frame_29.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_38 = QHBoxLayout(self.frame_29)
-        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
-        self.frame_28 = QFrame(self.frame_29)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_29)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.frame_18 = QFrame(self.frame_29)
+        self.frame_18.setObjectName(u"frame_18")
+        self.frame_18.setFrameShape(QFrame.StyledPanel)
+        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_15 = QHBoxLayout(self.frame_18)
+        self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
+        self.label_4 = QLabel(self.frame_18)
+        self.label_4.setObjectName(u"label_4")
+
+        self.horizontalLayout_15.addWidget(self.label_4)
+
+
+        self.verticalLayout_12.addWidget(self.frame_18)
+
+        self.frame_22 = QFrame(self.frame_29)
+        self.frame_22.setObjectName(u"frame_22")
+        self.frame_22.setFrameShape(QFrame.StyledPanel)
+        self.frame_22.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_18 = QHBoxLayout(self.frame_22)
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.horizontalLayout_18.setContentsMargins(0, 0, -1, -1)
+        self.frame_17 = QFrame(self.frame_22)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setMaximumSize(QSize(1500, 500))
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.frame_17)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.frame_28 = QFrame(self.frame_17)
         self.frame_28.setObjectName(u"frame_28")
         self.frame_28.setMaximumSize(QSize(320, 461))
         self.frame_28.setFrameShape(QFrame.StyledPanel)
@@ -625,11 +751,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.button_prev = QPushButton(self.frame_28)
         self.button_prev.setObjectName(u"button_prev")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.button_prev.sizePolicy().hasHeightForWidth())
-        self.button_prev.setSizePolicy(sizePolicy6)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.button_prev.sizePolicy().hasHeightForWidth())
+        self.button_prev.setSizePolicy(sizePolicy5)
         self.button_prev.setMinimumSize(QSize(40, 40))
         self.button_prev.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
@@ -649,8 +775,8 @@ class Ui_MainWindow(object):
 
         self.button_next = QPushButton(self.frame_28)
         self.button_next.setObjectName(u"button_next")
-        sizePolicy6.setHeightForWidth(self.button_next.sizePolicy().hasHeightForWidth())
-        self.button_next.setSizePolicy(sizePolicy6)
+        sizePolicy5.setHeightForWidth(self.button_next.sizePolicy().hasHeightForWidth())
+        self.button_next.setSizePolicy(sizePolicy5)
         self.button_next.setMinimumSize(QSize(40, 40))
         self.button_next.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
@@ -675,11 +801,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.label_16 = QLabel(self.frame_28)
         self.label_16.setObjectName(u"label_16")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.label_16.sizePolicy().hasHeightForWidth())
-        self.label_16.setSizePolicy(sizePolicy7)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.label_16.sizePolicy().hasHeightForWidth())
+        self.label_16.setSizePolicy(sizePolicy6)
         self.label_16.setFont(font2)
 
         self.verticalLayout_19.addWidget(self.label_16)
@@ -704,8 +830,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
         self.button_save = QPushButton(self.frame_28)
         self.button_save.setObjectName(u"button_save")
-        sizePolicy3.setHeightForWidth(self.button_save.sizePolicy().hasHeightForWidth())
-        self.button_save.setSizePolicy(sizePolicy3)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Minimum)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.button_save.sizePolicy().hasHeightForWidth())
+        self.button_save.setSizePolicy(sizePolicy7)
         self.button_save.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
 "	Border-radius: 20px;\n"
@@ -724,8 +853,8 @@ class Ui_MainWindow(object):
 
         self.button_stop = QPushButton(self.frame_28)
         self.button_stop.setObjectName(u"button_stop")
-        sizePolicy3.setHeightForWidth(self.button_stop.sizePolicy().hasHeightForWidth())
-        self.button_stop.setSizePolicy(sizePolicy3)
+        sizePolicy7.setHeightForWidth(self.button_stop.sizePolicy().hasHeightForWidth())
+        self.button_stop.setSizePolicy(sizePolicy7)
         self.button_stop.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
 "	Border-radius: 20px;\n"
@@ -749,15 +878,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_21.setStretch(1, 1)
         self.verticalLayout_21.setStretch(2, 1)
 
-        self.horizontalLayout_38.addWidget(self.frame_28)
+        self.horizontalLayout_16.addWidget(self.frame_28)
 
-        self.frame_27 = QFrame(self.frame_29)
+        self.frame_27 = QFrame(self.frame_17)
         self.frame_27.setObjectName(u"frame_27")
         self.frame_27.setMaximumSize(QSize(911, 461))
-        self.frame_27.setFrameShape(QFrame.StyledPanel)
+        self.frame_27.setFrameShape(QFrame.Box)
         self.frame_27.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_36 = QHBoxLayout(self.frame_27)
         self.horizontalLayout_36.setObjectName(u"horizontalLayout_36")
+        self.horizontalLayout_36.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_18 = QVBoxLayout()
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.frame_25 = QFrame(self.frame_27)
@@ -1009,7 +1139,83 @@ class Ui_MainWindow(object):
         self.horizontalLayout_36.addLayout(self.verticalLayout_18)
 
 
-        self.horizontalLayout_38.addWidget(self.frame_27)
+        self.horizontalLayout_16.addWidget(self.frame_27)
+
+        self.frame_19 = QFrame(self.frame_17)
+        self.frame_19.setObjectName(u"frame_19")
+        sizePolicy2.setHeightForWidth(self.frame_19.sizePolicy().hasHeightForWidth())
+        self.frame_19.setSizePolicy(sizePolicy2)
+        self.frame_19.setMinimumSize(QSize(120, 0))
+        self.frame_19.setMaximumSize(QSize(150, 461))
+        self.frame_19.setFrameShape(QFrame.StyledPanel)
+        self.frame_19.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_19)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalSpacer_2 = QSpacerItem(20, 163, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.verticalSpacer_2)
+
+        self.frame_20 = QFrame(self.frame_19)
+        self.frame_20.setObjectName(u"frame_20")
+        sizePolicy8.setHeightForWidth(self.frame_20.sizePolicy().hasHeightForWidth())
+        self.frame_20.setSizePolicy(sizePolicy8)
+        self.frame_20.setFrameShape(QFrame.StyledPanel)
+        self.frame_20.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_17 = QHBoxLayout(self.frame_20)
+        self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
+        self.horizontalLayout_17.setContentsMargins(0, 0, 0, 0)
+        self.label_5 = QLabel(self.frame_20)
+        self.label_5.setObjectName(u"label_5")
+        sizePolicy1.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
+        self.label_5.setSizePolicy(sizePolicy1)
+        self.label_5.setMinimumSize(QSize(110, 0))
+        self.label_5.setFont(font4)
+
+        self.horizontalLayout_17.addWidget(self.label_5)
+
+
+        self.verticalLayout_13.addWidget(self.frame_20)
+
+        self.whoClassify = QLineEdit(self.frame_19)
+        self.whoClassify.setObjectName(u"whoClassify")
+
+        self.verticalLayout_13.addWidget(self.whoClassify)
+
+        self.verticalSpacer_3 = QSpacerItem(20, 38, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.verticalSpacer_3)
+
+        self.frame_21 = QFrame(self.frame_19)
+        self.frame_21.setObjectName(u"frame_21")
+        self.frame_21.setFrameShape(QFrame.StyledPanel)
+        self.frame_21.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_14 = QHBoxLayout(self.frame_21)
+        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.check_error = QCheckBox(self.frame_21)
+        self.check_error.setObjectName(u"check_error")
+        self.check_error.setFont(font2)
+
+        self.horizontalLayout_14.addWidget(self.check_error)
+
+
+        self.verticalLayout_13.addWidget(self.frame_21)
+
+        self.verticalSpacer = QSpacerItem(20, 117, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_13.addItem(self.verticalSpacer)
+
+
+        self.horizontalLayout_16.addWidget(self.frame_19)
+
+        self.horizontalLayout_16.setStretch(0, 3)
+        self.horizontalLayout_16.setStretch(1, 8)
+        self.horizontalLayout_16.setStretch(2, 1)
+
+        self.horizontalLayout_18.addWidget(self.frame_17)
+
+
+        self.verticalLayout_12.addWidget(self.frame_22)
 
 
         self.horizontalLayout_39.addWidget(self.frame_29)
@@ -1031,8 +1237,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(15, 15, 15, 15)
         self.button_extract_page = QPushButton(self.frame)
         self.button_extract_page.setObjectName(u"button_extract_page")
-        sizePolicy3.setHeightForWidth(self.button_extract_page.sizePolicy().hasHeightForWidth())
-        self.button_extract_page.setSizePolicy(sizePolicy3)
+        sizePolicy7.setHeightForWidth(self.button_extract_page.sizePolicy().hasHeightForWidth())
+        self.button_extract_page.setSizePolicy(sizePolicy7)
         self.button_extract_page.setMinimumSize(QSize(0, 0))
         font5 = QFont()
         font5.setPointSize(14)
@@ -1058,8 +1264,8 @@ class Ui_MainWindow(object):
 
         self.button_classify_page = QPushButton(self.frame)
         self.button_classify_page.setObjectName(u"button_classify_page")
-        sizePolicy3.setHeightForWidth(self.button_classify_page.sizePolicy().hasHeightForWidth())
-        self.button_classify_page.setSizePolicy(sizePolicy3)
+        sizePolicy7.setHeightForWidth(self.button_classify_page.sizePolicy().hasHeightForWidth())
+        self.button_classify_page.setSizePolicy(sizePolicy7)
         self.button_classify_page.setFont(font)
         self.button_classify_page.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
@@ -1098,12 +1304,14 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Chose files .bpmn to be extracted</span></p></body></html>", None))
         self.button_browseBPMN.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
+        self.Button_voltar_bpmn.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.button_extract.setText(QCoreApplication.translate("MainWindow", u"Extract Elements", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Select .csv with the elements to be classified</span></p></body></html>", None))
         self.button_browseCSV.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.checkBox_filter.setText(QCoreApplication.translate("MainWindow", u"Pre filter Elements", None))
+        self.Button_voltar_csv.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.button_classify.setText(QCoreApplication.translate("MainWindow", u"Classify Elements", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Elements types to Remove</span></p></body></html>", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Select the elements types to be removed from the file</span></p></body></html>", None))
         self.checkBox_participant.setText(QCoreApplication.translate("MainWindow", u"participant", None))
         self.checkBox_messageFlow.setText(QCoreApplication.translate("MainWindow", u"messageFlow", None))
         self.checkBox_association.setText(QCoreApplication.translate("MainWindow", u"association", None))
@@ -1125,6 +1333,7 @@ class Ui_MainWindow(object):
         self.checkBox_textAnnotation_2.setText(QCoreApplication.translate("MainWindow", u"textAnnotation", None))
         self.checkBox_collaboration.setText(QCoreApplication.translate("MainWindow", u"collaboration", None))
         self.checkBox_lane.setText(QCoreApplication.translate("MainWindow", u"lane", None))
+        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"messageFlow", None))
         self.checkBox_scriptTask.setText(QCoreApplication.translate("MainWindow", u"scriptTask", None))
         self.checkBox_callActivity.setText(QCoreApplication.translate("MainWindow", u"callActivity", None))
         self.checkBox_subProcess.setText(QCoreApplication.translate("MainWindow", u"subProcess", None))
@@ -1136,7 +1345,9 @@ class Ui_MainWindow(object):
         self.checkBox_businessRuleTask.setText(QCoreApplication.translate("MainWindow", u"businessRuleTask", None))
         self.checkBox_serviceTask.setText(QCoreApplication.translate("MainWindow", u"serviceTask", None))
         self.checkBox_rmvNonEnglish.setText(QCoreApplication.translate("MainWindow", u"Remove Non-English (Google translate)", None))
+        self.Button_voltar_filter.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.button_filter.setText(QCoreApplication.translate("MainWindow", u"Filter", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Observe the BPMN elemnt displayed on the left and evaluate how much do you belive it fits each category</span></p></body></html>", None))
         self.img_label.setText("")
         self.button_prev.setText(QCoreApplication.translate("MainWindow", u"<", None))
         self.button_next.setText(QCoreApplication.translate("MainWindow", u">", None))
@@ -1168,6 +1379,9 @@ class Ui_MainWindow(object):
         self.radio_pdi3.setText("")
         self.radio_pdi4.setText("")
         self.radio_pdi5.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Classifier Name</p></body></html>", None))
+        self.check_error.setText(QCoreApplication.translate("MainWindow", u"Language\n"
+"   Erorr", None))
         self.button_extract_page.setText(QCoreApplication.translate("MainWindow", u"Extract Elements From .bpmn file", None))
         self.button_classify_page.setText(QCoreApplication.translate("MainWindow", u"Classify Extracted Elements", None))
     # retranslateUi
