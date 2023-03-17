@@ -139,5 +139,5 @@ def extractor(pathways, output_location):
                               categ=category)  # cada arquivo possui somente um collaborations
 
         df_out = df_out.set_index('file')
-        df_out.to_csv(os.path.join(output_location, 'Element_names.csv'))  # Final result of execution
+        df_out.to_csv(output_location)  # Final result of execution
         break

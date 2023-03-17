@@ -3,14 +3,15 @@ import os
 import datetime
 
 from ui_interface import Ui_MainWindow
-from PySide2.QtCore import QPoint, QSize
+from PySide2.QtCore import QPoint, QSize, Qt
 from PySide2.QtWidgets import (
     QApplication,
     QMainWindow,
     QMessageBox,
     QFileDialog,
+    QShortcut
 )
-from PySide2.QtGui import QPixmap, QPainter, QPen
+from PySide2.QtGui import QPixmap, QPainter, QPen, QKeySequence
 
 from Extractor import extractor
 from PreClassify import pre_classify
@@ -27,6 +28,7 @@ class Interface(QMainWindow, Ui_MainWindow):
         self.df = None
         self.index = 0
         self.who = ''
+        self.text_saida = ''
         # Buttons effects
         # First page
         self.button_extract_page.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_select_extract))
@@ -46,11 +48,14 @@ class Interface(QMainWindow, Ui_MainWindow):
         # classify page
         self.button_next.clicked.connect(lambda: self.change_element(1))
         self.button_prev.clicked.connect(lambda: self.change_element(-1))
-        self.button_save.clicked.connect(lambda: self.df.to_csv(self.text_filesCSV.text(), index=False))
+        self.button_save.clicked.connect(lambda: self.df.to_csv(self.text_saida, index=False))
+        self.button_stop.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.page_first))
         self.button_prev.setDisabled(True)
         self.button_next.setDisabled(True)
         self.whoClassify.textChanged.connect(self.disable)
 
+        QShortcut(QKeySequence("left"), self.button_prev, lambda: self.change_element(-1))
+        QShortcut(QKeySequence("right"), self.button_next, lambda: self.change_element(1))
     def disable(self):
         """
         Disable Next and Prev Buttons until a classifier name is given
@@ -63,6 +68,8 @@ class Interface(QMainWindow, Ui_MainWindow):
         else:
             self.button_prev.setEnabled(True)
             self.button_next.setEnabled(True)
+
+
 
     def browse_bpmn(self):
         """
@@ -81,10 +88,14 @@ class Interface(QMainWindow, Ui_MainWindow):
         :return:
         """
         lista = self.text_filesBPMN.text().replace("'", "").split(",")
-        extractor(lista, "")
+        saida = QFileDialog.getSaveFileName(self, 'Save output as', '', filter='CSV File,(*.csv)')
+        print(saida)
+        extractor(lista, saida[0])
         msg = QMessageBox()
-        msg.setText('"Element_names.csv" with the extracted elements generated at application folder')
+        msg.setText(f'Extraction concluded at {saida[0]}')
         msg.exec_()
+        self.stackedWidget.setCurrentWidget(self.page_first)
+
 
     def browse_csv(self):
         """
@@ -108,6 +119,7 @@ class Interface(QMainWindow, Ui_MainWindow):
             self.stackedWidget.setCurrentWidget(self.page_filter)
 
         else:
+            self.text_saida = self.text_filesCSV.text()
             self.df = openfile(self.text_filesCSV.text())
             if type(self.df) == str:
                 msg = QMessageBox()
@@ -143,9 +155,13 @@ class Interface(QMainWindow, Ui_MainWindow):
             checkb = self.verticalLayout_10.itemAt(i).widget()
             if checkb.isChecked():
                 excluir.append(checkb.text())
+
+        saida = QFileDialog.getSaveFileName(self, 'Save output as', os.path.dirname(os.path.abspath(__file__)), filter='CSV File,(*.csv)')
         try:
-            self.df = pre_classify(self.text_filesCSV.text(), 'saida.csv', excluir,
-                                   self.checkBox_rmvNonEnglish.isChecked())
+            self.text_saida = saida[0]
+            pre_classify(self.text_filesCSV.text(), saida[0], excluir,
+                                       self.checkBox_rmvNonEnglish.isChecked())
+            self.df = openfile(saida[0])
             self.get_img()
             self.stackedWidget.setCurrentWidget(self.page_classify)
         except Exception as e:
@@ -168,7 +184,7 @@ class Interface(QMainWindow, Ui_MainWindow):
         self.img_label.setPixmap(canvas)
         self.text_element_name.clear()
         self.text_element_name.appendPlainText(self.df.at[self.index, 'Name'])
-        self.text_element_count.setText(f"{self.index}/{self.df.shape[0]}")
+        self.text_element_count.setText(f"{self.index+1}/{self.df.shape[0]}")
 
     def get_radio(self, layout, category, direction):
         """
@@ -205,6 +221,13 @@ class Interface(QMainWindow, Ui_MainWindow):
         :param direction:
         :return:
         """
+
+        if self.check_error.isChecked():
+            self.check_error.setChecked(False)
+            self.df.at[self.index,'Language_error'] = True
+        else:
+            self.df.at[self.index, 'Language_error'] = False
+
         self.df.at[self.index, 'Classified'] = True
         self.df.at[self.index, 'Who_Classified'] = self.who
         self.df.at[self.index, 'timestamp'] = datetime.datetime.now()

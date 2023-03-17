@@ -31,7 +31,7 @@ def img_file(df, aux):
         return 'imagens\\' + tipo + '.png', ''
 
 
-errors_list = ['Orthography', 'Language', 'Others']
+errors_list = ['Language_error']
 categories = ['Process Participants', 'System, tools, and technologies', 'Processed documents and information']
 classifications = ['Strongly disagree', 'Disagree', 'Neutral', 'Agree', 'Strongly agree']
 
