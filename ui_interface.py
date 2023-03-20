@@ -383,19 +383,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_7 = QVBoxLayout()
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.checkBox_participant = QCheckBox(self.frame_7)
-        self.checkBox_participant.setObjectName(u"checkBox_participant")
+        self.checkBox_collaboration = QCheckBox(self.frame_7)
+        self.checkBox_collaboration.setObjectName(u"checkBox_collaboration")
         font3 = QFont()
         font3.setPointSize(13)
-        self.checkBox_participant.setFont(font3)
+        self.checkBox_collaboration.setFont(font3)
 
-        self.verticalLayout_7.addWidget(self.checkBox_participant)
-
-        self.checkBox_messageFlow = QCheckBox(self.frame_7)
-        self.checkBox_messageFlow.setObjectName(u"checkBox_messageFlow")
-        self.checkBox_messageFlow.setFont(font3)
-
-        self.verticalLayout_7.addWidget(self.checkBox_messageFlow)
+        self.verticalLayout_7.addWidget(self.checkBox_collaboration)
 
         self.checkBox_association = QCheckBox(self.frame_7)
         self.checkBox_association.setObjectName(u"checkBox_association")
@@ -403,11 +397,23 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.checkBox_association)
 
-        self.checkBox_textAnnotation = QCheckBox(self.frame_7)
-        self.checkBox_textAnnotation.setObjectName(u"checkBox_textAnnotation")
-        self.checkBox_textAnnotation.setFont(font3)
+        self.checkBox_transaction = QCheckBox(self.frame_7)
+        self.checkBox_transaction.setObjectName(u"checkBox_transaction")
+        self.checkBox_transaction.setFont(font3)
 
-        self.verticalLayout_7.addWidget(self.checkBox_textAnnotation)
+        self.verticalLayout_7.addWidget(self.checkBox_transaction)
+
+        self.checkBox_messageFlow = QCheckBox(self.frame_7)
+        self.checkBox_messageFlow.setObjectName(u"checkBox_messageFlow")
+        self.checkBox_messageFlow.setFont(font3)
+
+        self.verticalLayout_7.addWidget(self.checkBox_messageFlow)
+
+        self.checkBox_sequenceFlow = QCheckBox(self.frame_7)
+        self.checkBox_sequenceFlow.setObjectName(u"checkBox_sequenceFlow")
+        self.checkBox_sequenceFlow.setFont(font3)
+
+        self.verticalLayout_7.addWidget(self.checkBox_sequenceFlow)
 
         self.checkBox_exclusiveGateway = QCheckBox(self.frame_7)
         self.checkBox_exclusiveGateway.setObjectName(u"checkBox_exclusiveGateway")
@@ -439,18 +445,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.checkBox_inclusiveGateway)
 
-        self.checkBox_adHocSubProcess = QCheckBox(self.frame_7)
-        self.checkBox_adHocSubProcess.setObjectName(u"checkBox_adHocSubProcess")
-        self.checkBox_adHocSubProcess.setFont(font3)
-
-        self.verticalLayout_7.addWidget(self.checkBox_adHocSubProcess)
-
-        self.checkBox_task = QCheckBox(self.frame_7)
-        self.checkBox_task.setObjectName(u"checkBox_task")
-        self.checkBox_task.setFont(font3)
-
-        self.verticalLayout_7.addWidget(self.checkBox_task)
-
 
         self.horizontalLayout_8.addLayout(self.verticalLayout_7)
 
@@ -468,11 +462,29 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.checkBox_dataStoreReference)
 
-        self.checkBox_boundaryEvent = QCheckBox(self.frame_7)
-        self.checkBox_boundaryEvent.setObjectName(u"checkBox_boundaryEvent")
-        self.checkBox_boundaryEvent.setFont(font3)
+        self.checkBox_textAnnotation = QCheckBox(self.frame_7)
+        self.checkBox_textAnnotation.setObjectName(u"checkBox_textAnnotation")
+        self.checkBox_textAnnotation.setFont(font3)
 
-        self.verticalLayout_8.addWidget(self.checkBox_boundaryEvent)
+        self.verticalLayout_8.addWidget(self.checkBox_textAnnotation)
+
+        self.checkBox_lane = QCheckBox(self.frame_7)
+        self.checkBox_lane.setObjectName(u"checkBox_lane")
+        self.checkBox_lane.setFont(font3)
+
+        self.verticalLayout_8.addWidget(self.checkBox_lane)
+
+        self.checkBox_participant = QCheckBox(self.frame_7)
+        self.checkBox_participant.setObjectName(u"checkBox_participant")
+        self.checkBox_participant.setFont(font3)
+
+        self.verticalLayout_8.addWidget(self.checkBox_participant)
+
+        self.checkBox_startEvent = QCheckBox(self.frame_7)
+        self.checkBox_startEvent.setObjectName(u"checkBox_startEvent")
+        self.checkBox_startEvent.setFont(font3)
+
+        self.verticalLayout_8.addWidget(self.checkBox_startEvent)
 
         self.checkBox_endEvent = QCheckBox(self.frame_7)
         self.checkBox_endEvent.setObjectName(u"checkBox_endEvent")
@@ -480,11 +492,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.checkBox_endEvent)
 
-        self.checkBox_startEvent = QCheckBox(self.frame_7)
-        self.checkBox_startEvent.setObjectName(u"checkBox_startEvent")
-        self.checkBox_startEvent.setFont(font3)
+        self.checkBox_boundaryEvent = QCheckBox(self.frame_7)
+        self.checkBox_boundaryEvent.setObjectName(u"checkBox_boundaryEvent")
+        self.checkBox_boundaryEvent.setFont(font3)
 
-        self.verticalLayout_8.addWidget(self.checkBox_startEvent)
+        self.verticalLayout_8.addWidget(self.checkBox_boundaryEvent)
 
         self.checkBox_intermediateCatchEvent = QCheckBox(self.frame_7)
         self.checkBox_intermediateCatchEvent.setObjectName(u"checkBox_intermediateCatchEvent")
@@ -498,35 +510,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.checkBox_intermediateThrowEvent)
 
-        self.checkBox_textAnnotation_2 = QCheckBox(self.frame_7)
-        self.checkBox_textAnnotation_2.setObjectName(u"checkBox_textAnnotation_2")
-        self.checkBox_textAnnotation_2.setFont(font3)
-
-        self.verticalLayout_8.addWidget(self.checkBox_textAnnotation_2)
-
-        self.checkBox_collaboration = QCheckBox(self.frame_7)
-        self.checkBox_collaboration.setObjectName(u"checkBox_collaboration")
-        self.checkBox_collaboration.setFont(font3)
-
-        self.verticalLayout_8.addWidget(self.checkBox_collaboration)
-
-        self.checkBox_lane = QCheckBox(self.frame_7)
-        self.checkBox_lane.setObjectName(u"checkBox_lane")
-        self.checkBox_lane.setFont(font3)
-
-        self.verticalLayout_8.addWidget(self.checkBox_lane)
-
-        self.checkBox = QCheckBox(self.frame_7)
-        self.checkBox.setObjectName(u"checkBox")
-        self.checkBox.setFont(font3)
-
-        self.verticalLayout_8.addWidget(self.checkBox)
-
 
         self.horizontalLayout_8.addLayout(self.verticalLayout_8)
 
         self.verticalLayout_10 = QVBoxLayout()
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.checkBox_task = QCheckBox(self.frame_7)
+        self.checkBox_task.setObjectName(u"checkBox_task")
+        self.checkBox_task.setFont(font3)
+
+        self.verticalLayout_10.addWidget(self.checkBox_task)
+
         self.checkBox_scriptTask = QCheckBox(self.frame_7)
         self.checkBox_scriptTask.setObjectName(u"checkBox_scriptTask")
         self.checkBox_scriptTask.setFont(font3)
@@ -544,12 +538,6 @@ class Ui_MainWindow(object):
         self.checkBox_subProcess.setFont(font3)
 
         self.verticalLayout_10.addWidget(self.checkBox_subProcess)
-
-        self.checkBox_transaction = QCheckBox(self.frame_7)
-        self.checkBox_transaction.setObjectName(u"checkBox_transaction")
-        self.checkBox_transaction.setFont(font3)
-
-        self.verticalLayout_10.addWidget(self.checkBox_transaction)
 
         self.checkBox_sendTask = QCheckBox(self.frame_7)
         self.checkBox_sendTask.setObjectName(u"checkBox_sendTask")
@@ -586,6 +574,12 @@ class Ui_MainWindow(object):
         self.checkBox_serviceTask.setFont(font3)
 
         self.verticalLayout_10.addWidget(self.checkBox_serviceTask)
+
+        self.checkBox_adHocSubProcess = QCheckBox(self.frame_7)
+        self.checkBox_adHocSubProcess.setObjectName(u"checkBox_adHocSubProcess")
+        self.checkBox_adHocSubProcess.setFont(font3)
+
+        self.verticalLayout_10.addWidget(self.checkBox_adHocSubProcess)
 
 
         self.horizontalLayout_8.addLayout(self.verticalLayout_10)
@@ -1312,38 +1306,37 @@ class Ui_MainWindow(object):
         self.Button_voltar_csv.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.button_classify.setText(QCoreApplication.translate("MainWindow", u"Classify Elements", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Select the elements types to be removed from the file</span></p></body></html>", None))
-        self.checkBox_participant.setText(QCoreApplication.translate("MainWindow", u"participant", None))
-        self.checkBox_messageFlow.setText(QCoreApplication.translate("MainWindow", u"messageFlow", None))
+        self.checkBox_collaboration.setText(QCoreApplication.translate("MainWindow", u"collaboration", None))
         self.checkBox_association.setText(QCoreApplication.translate("MainWindow", u"association", None))
-        self.checkBox_textAnnotation.setText(QCoreApplication.translate("MainWindow", u"textAnnotation", None))
+        self.checkBox_transaction.setText(QCoreApplication.translate("MainWindow", u"transaction", None))
+        self.checkBox_messageFlow.setText(QCoreApplication.translate("MainWindow", u"messageFlow", None))
+        self.checkBox_sequenceFlow.setText(QCoreApplication.translate("MainWindow", u"sequenceFlow", None))
         self.checkBox_exclusiveGateway.setText(QCoreApplication.translate("MainWindow", u"exclusiveGateway", None))
         self.checkBox_parallelGateway.setText(QCoreApplication.translate("MainWindow", u"parallelGateway", None))
         self.complexGateway.setText(QCoreApplication.translate("MainWindow", u"complexGateway", None))
         self.checkBox_eventBasedGateway.setText(QCoreApplication.translate("MainWindow", u"eventBasedGateway", None))
         self.checkBox_inclusiveGateway.setText(QCoreApplication.translate("MainWindow", u"inclusiveGateway", None))
-        self.checkBox_adHocSubProcess.setText(QCoreApplication.translate("MainWindow", u"adHocSubProcess", None))
-        self.checkBox_task.setText(QCoreApplication.translate("MainWindow", u"task", None))
         self.checkBox_dataObjectReference.setText(QCoreApplication.translate("MainWindow", u"dataObjectReference", None))
         self.checkBox_dataStoreReference.setText(QCoreApplication.translate("MainWindow", u"dataStoreReference", None))
-        self.checkBox_boundaryEvent.setText(QCoreApplication.translate("MainWindow", u"boundaryEvent", None))
-        self.checkBox_endEvent.setText(QCoreApplication.translate("MainWindow", u"endEvent", None))
+        self.checkBox_textAnnotation.setText(QCoreApplication.translate("MainWindow", u"textAnnotation", None))
+        self.checkBox_lane.setText(QCoreApplication.translate("MainWindow", u"lane", None))
+        self.checkBox_participant.setText(QCoreApplication.translate("MainWindow", u"participant", None))
         self.checkBox_startEvent.setText(QCoreApplication.translate("MainWindow", u"startEvent", None))
+        self.checkBox_endEvent.setText(QCoreApplication.translate("MainWindow", u"endEvent", None))
+        self.checkBox_boundaryEvent.setText(QCoreApplication.translate("MainWindow", u"boundaryEvent", None))
         self.checkBox_intermediateCatchEvent.setText(QCoreApplication.translate("MainWindow", u"intermediateCatchEvent", None))
         self.checkBox_intermediateThrowEvent.setText(QCoreApplication.translate("MainWindow", u"intermediateThrowEvent", None))
-        self.checkBox_textAnnotation_2.setText(QCoreApplication.translate("MainWindow", u"textAnnotation", None))
-        self.checkBox_collaboration.setText(QCoreApplication.translate("MainWindow", u"collaboration", None))
-        self.checkBox_lane.setText(QCoreApplication.translate("MainWindow", u"lane", None))
-        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"messageFlow", None))
+        self.checkBox_task.setText(QCoreApplication.translate("MainWindow", u"task", None))
         self.checkBox_scriptTask.setText(QCoreApplication.translate("MainWindow", u"scriptTask", None))
         self.checkBox_callActivity.setText(QCoreApplication.translate("MainWindow", u"callActivity", None))
         self.checkBox_subProcess.setText(QCoreApplication.translate("MainWindow", u"subProcess", None))
-        self.checkBox_transaction.setText(QCoreApplication.translate("MainWindow", u"transaction", None))
         self.checkBox_sendTask.setText(QCoreApplication.translate("MainWindow", u"sendTask", None))
         self.checkBox_receiveTask.setText(QCoreApplication.translate("MainWindow", u"receiveTask", None))
         self.checkBox_userTask.setText(QCoreApplication.translate("MainWindow", u"userTask", None))
         self.checkBox_manualTask.setText(QCoreApplication.translate("MainWindow", u"manualTask", None))
         self.checkBox_businessRuleTask.setText(QCoreApplication.translate("MainWindow", u"businessRuleTask", None))
         self.checkBox_serviceTask.setText(QCoreApplication.translate("MainWindow", u"serviceTask", None))
+        self.checkBox_adHocSubProcess.setText(QCoreApplication.translate("MainWindow", u"adHocSubProcess", None))
         self.checkBox_rmvNonEnglish.setText(QCoreApplication.translate("MainWindow", u"Remove Non-English (Google translate)", None))
         self.Button_voltar_filter.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.button_filter.setText(QCoreApplication.translate("MainWindow", u"Filter", None))

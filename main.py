@@ -127,7 +127,6 @@ class Interface(QMainWindow, Ui_MainWindow):
                 msg.exec_()
             else:
                 self.index = self.df[self.df["Classified"] == False].index[0]
-                print(self.index)
                 self.get_img()
                 self.stackedWidget.setCurrentWidget(self.page_classify)
             pass
@@ -162,8 +161,15 @@ class Interface(QMainWindow, Ui_MainWindow):
             pre_classify(self.text_filesCSV.text(), saida[0], excluir,
                                        self.checkBox_rmvNonEnglish.isChecked())
             self.df = openfile(saida[0])
-            self.get_img()
-            self.stackedWidget.setCurrentWidget(self.page_classify)
+            if type(self.df) == str:
+                msg = QMessageBox()
+                msg.setText(self.df)
+                msg.exec_()
+            else:
+                self.index = 0
+                self.get_img()
+                self.stackedWidget.setCurrentWidget(self.page_classify)
+
         except Exception as e:
             print(e)
 
