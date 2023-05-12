@@ -647,6 +647,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.button_filter.sizePolicy().hasHeightForWidth())
         self.button_filter.setSizePolicy(sizePolicy1)
         self.button_filter.setMinimumSize(QSize(0, 40))
+        self.button_filter.setFont(font)
         self.button_filter.setStyleSheet(u"QPushButton{\n"
 "	Border: 2px solid rgb(37,39,48);\n"
 "	Border-radius: 20px;\n"
@@ -722,6 +723,7 @@ class Ui_MainWindow(object):
         self.img_label.setObjectName(u"img_label")
         self.img_label.setFrameShape(QFrame.Panel)
         self.img_label.setPixmap(QPixmap(u":/user/imagens/userTask.png"))
+        self.img_label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_20.addWidget(self.img_label)
 
@@ -1183,14 +1185,33 @@ class Ui_MainWindow(object):
         self.frame_21.setObjectName(u"frame_21")
         self.frame_21.setFrameShape(QFrame.StyledPanel)
         self.frame_21.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_14 = QHBoxLayout(self.frame_21)
-        self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+
+        self.verticalLayout_14 = QVBoxLayout(self.frame_21)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.label_6 = QLabel(self.frame_21)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setFont(font2)
+
+        self.verticalLayout_14.addWidget(self.label_6)
+
         self.check_error = QCheckBox(self.frame_21)
         self.check_error.setObjectName(u"check_error")
         self.check_error.setFont(font2)
 
-        self.horizontalLayout_14.addWidget(self.check_error)
+        self.verticalLayout_14.addWidget(self.check_error)
+
+        self.checkBox = QCheckBox(self.frame_21)
+        self.checkBox.setObjectName(u"checkBox")
+        self.checkBox.setFont(font2)
+
+        self.verticalLayout_14.addWidget(self.checkBox)
+
+        self.checkBox_2 = QCheckBox(self.frame_21)
+        self.checkBox_2.setObjectName(u"checkBox_2")
+        self.checkBox_2.setFont(font2)
+
+        self.verticalLayout_14.addWidget(self.checkBox_2)
 
 
         self.verticalLayout_13.addWidget(self.frame_21)
@@ -1295,15 +1316,17 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
+        canvas = QPixmap("imagens/voltar.png")
+        buttonIcon = QIcon(canvas)
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Chose files .bpmn to be extracted</span></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Choose files with the .bpmn extension to have the elements extracted</span></p></body></html>", None))
         self.button_browseBPMN.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
-        self.Button_voltar_bpmn.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
+        self.Button_voltar_bpmn.setIcon(buttonIcon)
         self.button_extract.setText(QCoreApplication.translate("MainWindow", u"Extract Elements", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Select .csv with the elements to be classified</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Select the .csv file containing the elements to be classified</span></p></body></html>", None))
         self.button_browseCSV.setText(QCoreApplication.translate("MainWindow", u"Browse", None))
         self.checkBox_filter.setText(QCoreApplication.translate("MainWindow", u"Pre filter Elements", None))
-        self.Button_voltar_csv.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
+        self.Button_voltar_csv.setIcon(buttonIcon)
         self.button_classify.setText(QCoreApplication.translate("MainWindow", u"Classify Elements", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Select the elements types to be removed from the file</span></p></body></html>", None))
         self.checkBox_collaboration.setText(QCoreApplication.translate("MainWindow", u"collaboration", None))
@@ -1338,9 +1361,9 @@ class Ui_MainWindow(object):
         self.checkBox_serviceTask.setText(QCoreApplication.translate("MainWindow", u"serviceTask", None))
         self.checkBox_adHocSubProcess.setText(QCoreApplication.translate("MainWindow", u"adHocSubProcess", None))
         self.checkBox_rmvNonEnglish.setText(QCoreApplication.translate("MainWindow", u"Remove Non-English (Google translate)", None))
-        self.Button_voltar_filter.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
+        self.Button_voltar_filter.setIcon(buttonIcon)
         self.button_filter.setText(QCoreApplication.translate("MainWindow", u"Filter", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Observe the BPMN elemnt displayed on the left and evaluate how much do you belive it fits each category</span></p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">Observe the BPMN element displayed on the left and evaluate how well it fits each category.</span></p></body></html>", None))
         self.img_label.setText("")
         self.button_prev.setText(QCoreApplication.translate("MainWindow", u"<", None))
         self.button_next.setText(QCoreApplication.translate("MainWindow", u">", None))
@@ -1373,8 +1396,10 @@ class Ui_MainWindow(object):
         self.radio_pdi4.setText("")
         self.radio_pdi5.setText("")
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p>Classifier Name</p></body></html>", None))
-        self.check_error.setText(QCoreApplication.translate("MainWindow", u"Language\n"
-"   Erorr", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Error detected?", None))
+        self.check_error.setText(QCoreApplication.translate("MainWindow", u"Language ", None))
+        self.checkBox.setText(QCoreApplication.translate("MainWindow", u"Orthography", None))
+        self.checkBox_2.setText(QCoreApplication.translate("MainWindow", u"Others", None))
         self.button_extract_page.setText(QCoreApplication.translate("MainWindow", u"Extract Elements From .bpmn file", None))
         self.button_classify_page.setText(QCoreApplication.translate("MainWindow", u"Classify Extracted Elements", None))
     # retranslateUi

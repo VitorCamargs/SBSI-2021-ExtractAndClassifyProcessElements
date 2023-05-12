@@ -217,6 +217,12 @@ class Interface(QMainWindow, Ui_MainWindow):
                 radio.setAutoExclusive(False)
                 radio.setChecked(True)
                 radio.setAutoExclusive(True)
+            if self.df.at[self.index + direction, 'Language_error']:
+                self.check_error.setChecked(True)
+            if self.df.at[self.index + direction, 'Orthography_error']:
+                self.checkBox.setChecked(True)
+            if self.df.at[self.index + direction, 'Others_error']:
+                self.checkBox_2.setChecked(True)
 
     def change_element(self, direction):
         """
@@ -233,6 +239,18 @@ class Interface(QMainWindow, Ui_MainWindow):
             self.df.at[self.index,'Language_error'] = True
         else:
             self.df.at[self.index, 'Language_error'] = False
+
+        if self.checkBox.isChecked():
+            self.checkBox.setChecked(False)
+            self.df.at[self.index,'Orthography_error'] = True
+        else:
+            self.df.at[self.index, 'Orthography_error'] = False
+
+        if self.checkBox_2.isChecked():
+            self.checkBox_2.setChecked(False)
+            self.df.at[self.index,'Others_error'] = True
+        else:
+            self.df.at[self.index, 'Others_error'] = False
 
         self.df.at[self.index, 'Classified'] = True
         self.df.at[self.index, 'Who_Classified'] = self.who
